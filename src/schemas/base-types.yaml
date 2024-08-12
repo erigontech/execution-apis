@@ -67,3 +67,7 @@ hash32:
 notFound:
   title: 'Not Found (null)'
   type: 'null'
+base64:
+  title: base64 encoded data
+  type: string
+  pattern: ^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{4}|[A-Za-z0-9+\/]{3}=|[A-Za-z0-9+\/]{2}={2})$
