@@ -11,6 +11,11 @@ byte:
   title: hex encoded byte
   type: string
   pattern: ^0x([0-9a-fA-F]?){1,2}$
+byteNumber:
+  title: decimal 8-bit number
+  type: number
+  minimum: 0
+  maximum: 255
 bytes:
   title: hex encoded bytes
   type: string

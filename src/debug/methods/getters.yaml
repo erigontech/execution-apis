@@ -176,12 +176,10 @@
       required: true
       schema:
         $ref: '#/components/schemas/BlockNumberOrTag'
-    - name: Hashed addresses
+    - name: Addresses prefix
       required: true
       schema:
-        type: array
-        items:
-          $ref: '#/components/schemas/bytesMax32'
+        $ref: '#/components/schemas/addressesPrefix'
     - name: Maximum results
       required: true
       schema:
@@ -196,10 +194,10 @@
       schema:
         type: boolean
     - name: No preimages
-      required: true
+      required: false
       schema:
         type: boolean
   result:
-    name: DumpAccounts
+    name: dumpAccounts
     schema:
-      $ref: '#/components/schemas/DumpAccounts'
+      $ref: '#/components/schemas/dumpAccounts'

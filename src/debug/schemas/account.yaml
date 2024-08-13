@@ -1,4 +1,4 @@
-DumpAccounts:
+dumpAccounts:
   title: Dumped Accounts
   type: object
   required:
@@ -12,11 +12,11 @@ DumpAccounts:
       $ref: '#/components/schemas/hash32'
     accounts:
       title: accounts
-      $ref: '#/components/schemas/DumpAccount'
+      $ref: '#/components/schemas/dumpAccount'
     next:
       title: next
       $ref: '#/components/schemas/base64'
-DumpAccount:
+dumpAccount:
   title: Dumped Account
   type: object
   required:
@@ -39,3 +39,8 @@ DumpAccount:
     code:
       title: code
       $ref: '#/components/schemas/bytes'
+addressesPrefix:
+  title: prefix of addresses expressed as array of bytes
+  type: array
+  items:
+    $ref: '#/components/schemas/byteNumber'
