@@ -30,7 +30,7 @@ methodFiles.forEach(file => {
   ];
 });
 
-methodsBase = "src/debug/";
+methodsBase = "src/debug/methods/";
 methodFiles = fs.readdirSync(methodsBase);
 methodFiles.forEach(file => {
   console.log(file);
@@ -57,6 +57,18 @@ methodFiles.forEach(file => {
 let schemas = {};
 let schemasBase = "src/schemas/"
 let schemaFiles = fs.readdirSync(schemasBase);
+schemaFiles.forEach(file => {
+  console.log(file);
+  let raw = fs.readFileSync(schemasBase + file);
+  let parsed = yaml.load(raw);
+  schemas = {
+    ...schemas,
+    ...parsed,
+  };
+});
+
+schemasBase = "src/debug/schemas/"
+schemaFiles = fs.readdirSync(schemasBase);
 schemaFiles.forEach(file => {
   console.log(file);
   let raw = fs.readFileSync(schemasBase + file);

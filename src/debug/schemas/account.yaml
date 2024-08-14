@@ -1,0 +1,46 @@
+dumpAccounts:
+  title: Dumped Accounts
+  type: object
+  required:
+    - root
+    - accounts
+    - next
+  additionalProperties: false
+  properties:
+    root:
+      title: root
+      $ref: '#/components/schemas/hash32'
+    accounts:
+      title: accounts
+      $ref: '#/components/schemas/dumpAccount'
+    next:
+      title: next
+      $ref: '#/components/schemas/base64'
+dumpAccount:
+  title: Dumped Account
+  type: object
+  required:
+    - balance
+    - nonce
+  additionalProperties: false
+  properties:
+    address:
+      title: balance
+      $ref: '#/components/schemas/uint256'
+    nonce:
+      title: nonce
+      $ref: '#/components/schemas/uint64'
+    root:
+      title: storageHash
+      $ref: '#/components/schemas/hash32'
+    codeHash:
+      title: codeHash
+      $ref: '#/components/schemas/hash32'
+    code:
+      title: code
+      $ref: '#/components/schemas/bytes'
+addressesPrefix:
+  title: prefix of addresses expressed as array of bytes
+  type: array
+  items:
+    $ref: '#/components/schemas/byteNumber'
